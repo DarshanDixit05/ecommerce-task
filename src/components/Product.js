@@ -1,10 +1,23 @@
 import React from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Button } from '@chakra-ui/react'
+import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 
 function Product({props, cart, setCart}) {
-
   const isProductInCart = cart.find(item => item === props);
-  console.log(cart);
+  const handleIncreaseQty = (item_id) =>{
+    setCart((prevCart)=>
+      prevCart.map((item)=>
+        item.id === item_id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    )
+  }
+  const handleDecreaseQty = (item_id) =>{
+    setCart((prevCart)=>
+      prevCart.map((item)=>
+        item.id === item_id ? { ...item, quantity:Math.max(1, item.quantity - 1) } : item
+      )
+    )
+  }
   return (
     <Card
     direction={{ base: 'column', sm: 'row' }}
@@ -26,11 +39,18 @@ function Product({props, cart, setCart}) {
         </CardBody>
         <CardFooter>
           {isProductInCart?(
-            <Button variant='outline' colorScheme='teal' onClick={()=>{
-              setCart(cart.filter((ele)=>ele!==props));
-            }}>
-              Remove From Cart
-            </Button>
+            <div class="after_add_to_cart">
+              <Button variant='outline' colorScheme='teal' onClick={()=>{
+                setCart(cart.filter((ele)=>ele!==props));
+              }}>
+                Remove From The Cart
+              </Button>
+              <div class="quantity">
+                <AddIcon h={4} w={4} onClick={()=>{handleIncreaseQty(props.id)}}/>
+                <Text class="qty">{props.quantity}</Text>
+                <MinusIcon h={4} w={4} onClick={()=>{handleDecreaseQty(props.id)}} />
+              </div>
+            </div>
           ):(
             <Button variant='solid' colorScheme='teal' onClick={()=>{
                 setCart([...cart, props]);

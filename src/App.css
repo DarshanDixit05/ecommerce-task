@@ -35,3 +35,34 @@
   height:460px;
   overflow-y:scroll;
 }
+
+#Cart_top_container{
+  display:grid;
+  grid-template-columns: 4fr 7fr;
+}
+
+#Cart_control_bar{
+  display:flex;
+  margin: 1rem;
+  gap:1rem;
+}
+
+.Cart_container{
+  margin:1rem;
+}
+
+#Cart_display{
+  height:460px;
+  overflow-y:scroll;
+}
+
+.after_add_to_cart{
+  display: flex;
+}
+
+.quantity{
+  display:flex;
+  gap:1rem;
+  margin-top:0.8rem;
+  margin-left:1rem;
+}

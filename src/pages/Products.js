@@ -3,10 +3,9 @@ import { Select, Input, Button } from '@chakra-ui/react'
 import Product from "../components/Product.js"
 import product_items from "../productsList.json"
 
-function Products() {
+function Products({cart, setCart}) {
   const [sortedArray , setSortedArray] = useState([...product_items]);
   const [searchProduct, setSearchProduct] = useState("");
-  const [cart, setCart] = useState([]);
 
   const handleSort = (e) =>{
     let selectedValue = e.target.value;

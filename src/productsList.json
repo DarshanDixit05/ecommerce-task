@@ -1,58 +1,74 @@
 [
   {
+    "id": 1,
     "title": "Smart LED TV",
     "description": "Experience stunning visual clarity with our Smart LED TV. Featuring ultra-high definition, a range of built-in streaming apps, and seamless connectivity, this TV is a perfect addition to your home entertainment setup.",
     "price": 29.99,
     "rating": 4.5,
-    "category": "Electronics"
+    "category": "Electronics",
+    "quantity": 1
   },
   {
+    "id": 2,
     "title": "Wireless Noise-Canceling Headphones",
     "description": "Immerse yourself in your favorite music or podcasts without distractions. Our wireless noise-canceling headphones offer superior sound quality and comfort for long listening sessions.",
     "price": 49.99,
     "rating": 3.8,
-    "category": "Electronics"
+    "category": "Electronics",
+    "quantity": 1
   },
   {
+    "id": 3,
     "title": "Stainless Steel Water Bottle",
     "description": "Stay hydrated on the go with our sleek stainless steel water bottle. Designed to keep your beverages hot or cold for hours, it's the perfect companion for your active lifestyle.",
     "price": 19.99,
     "rating": 4.2,
-    "category": "Kitchen & Dining"
+    "category": "Kitchen & Dining",
+    "quantity": 1
   },
   {
+    "id": 4,
     "title": "Laptop Backpack",
     "description": "Keep your laptop and essentials organized and secure with our stylish and functional laptop backpack. Multiple compartments, padded straps, and water-resistant material make it perfect for work or travel.",
     "price": 39.99,
     "rating": 4.7,
-    "category": "Accessories"
+    "category": "Accessories",
+    "quantity": 1
   },
   {
+    "id": 5,
     "title": "Coffee Maker",
     "description": "Brew your favorite coffee with our state-of-the-art coffee maker. It comes with a built-in grinder, programmable settings, and a stylish design.",
     "price": 79.99,
     "rating": 4.3,
-    "category": "Kitchen & Dining"
+    "category": "Kitchen & Dining",
+    "quantity": 1
   },
   {
+    "id": 6,
     "title": "Bluetooth Speaker",
     "description": "Enjoy high-quality sound on the go with our portable Bluetooth speaker. It's compact, water-resistant, and perfect for outdoor adventures.",
     "price": 34.99,
     "rating": 4.1,
-    "category": "Electronics"
+    "category": "Electronics",
+    "quantity": 1
   },
   {
+    "id": 7,
     "title": "Gaming Laptop",
     "description": "Take your gaming experience to the next level with our powerful gaming laptop. It features a high-performance GPU, a fast refresh rate display, and customizable RGB lighting.",
     "price": 1099.99,
     "rating": 4.8,
-    "category": "Electronics"
+    "category": "Electronics",
+    "quantity": 1
   },
   {
+    "id": 8,
     "title": "Digital Camera",
     "description": "Capture stunning photos and videos with our professional digital camera. It offers advanced features, interchangeable lenses, and 4K video recording.",
     "price": 699.99,
     "rating": 4.6,
-    "category": "Electronics"
+    "category": "Electronics",
+    "quantity": 1
   }
 ]

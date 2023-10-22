@@ -22,6 +22,8 @@ import { Link as ChakraLink, LinkProps } from '@chakra-ui/react'
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons'
 import cartt from "../static/cart-icon-28356.png"
+import { useNavigate } from 'react-router-dom';
+
 interface Props {
   children: React.ReactNode
 }
@@ -48,7 +50,10 @@ const NavLink = (props: Props) => {
 
 export default function WithAction() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-
+  const navigate = useNavigate();
+  const handleCartButton = () =>{
+    navigate('/cart');
+  }
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -93,6 +98,7 @@ export default function WithAction() {
               size={'sm'}
               mr={4}
               // leftIcon={<AddIcon />}
+              onClick={handleCartButton}
               >
               My Cart
             </Button>
