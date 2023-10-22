@@ -1,7 +1,10 @@
 import React from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Button } from '@chakra-ui/react'
 
-function Product(props) {
+function Product({props, cart, setCart}) {
+
+  const isProductInCart = cart.find(item => item === props);
+  console.log(cart);
   return (
     <Card
     direction={{ base: 'column', sm: 'row' }}
@@ -22,9 +25,20 @@ function Product(props) {
         <Text py='0' as="em">{props.category}</Text>
         </CardBody>
         <CardFooter>
-        <Button variant='outline' colorScheme='teal'>
-            Add To Cart
-        </Button>
+          {isProductInCart?(
+            <Button variant='outline' colorScheme='teal' onClick={()=>{
+              setCart(cart.filter((ele)=>ele!==props));
+            }}>
+              Remove From Cart
+            </Button>
+          ):(
+            <Button variant='solid' colorScheme='teal' onClick={()=>{
+                setCart([...cart, props]);
+              }
+            }>
+              Add To Cart
+            </Button>
+          )}
         <Heading py='2' px='4' size='sm'>${props.price}</Heading>
         </CardFooter>
     </Stack>

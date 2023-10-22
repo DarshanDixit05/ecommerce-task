@@ -6,6 +6,8 @@ import product_items from "../productsList.json"
 function Products() {
   const [sortedArray , setSortedArray] = useState([...product_items]);
   const [searchProduct, setSearchProduct] = useState("");
+  const [cart, setCart] = useState([]);
+
   const handleSort = (e) =>{
     let selectedValue = e.target.value;
     if(selectedValue==="option1"){
@@ -96,7 +98,7 @@ function Products() {
         {sortedArray.map((item)=>{
             return(
               <div className="Product_container">
-                <Product title={item.title} description={item.description} price={item.price} rating={item.rating} category={item.category} />
+                <Product props={item} cart={cart} setCart={setCart} />
               </div>
             )
         })}
