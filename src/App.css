@@ -8,3 +8,30 @@
 .left_home_containers{
   margin:1rem;
 }
+
+#Products_top_container{
+  display:grid;
+  grid-template-columns: 4fr 7fr;
+}
+
+#Products_search_bar{
+  display:flex;
+  margin: 1rem;
+  gap:1rem;
+}
+
+#Products_dropdowns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  margin:1rem;
+  gap:2rem;
+}
+
+.Product_container{
+  margin:1rem;
+}
+
+#Product_display{
+  height:460px;
+  overflow-y:scroll;
+}

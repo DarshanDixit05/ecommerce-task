@@ -18,6 +18,8 @@ import {
   Stack,
   Image
 } from '@chakra-ui/react'
+import { Link as ChakraLink, LinkProps } from '@chakra-ui/react'
+import { Link as ReactRouterLink } from 'react-router-dom'
 import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons'
 import cartt from "../static/cart-icon-28356.png"
 interface Props {
@@ -61,8 +63,16 @@ export default function WithAction() {
           <HStack spacing={20} alignItems={'center'}>
             <Box>My Store</Box>
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link, index) => (
+                (link==="Home")?<ChakraLink
+                as={ReactRouterLink} to={`/`}>
+                  {link}
+                </ChakraLink>
+                :
+                <ChakraLink
+                as={ReactRouterLink} to={`/${link.toLowerCase()}`}>
+                  {link}
+                </ChakraLink>
               ))}
             </HStack>
           </HStack>

@@ -1,0 +1,26 @@
+[
+    {
+      "title": "Smart LED TV",
+      "description": "Experience stunning visual clarity with our Smart LED TV. Featuring ultra-high definition, a range of built-in streaming apps, and seamless connectivity, this TV is a perfect addition to your home entertainment setup.",
+      "price": 29.99,
+      "rating": 4.5
+    },
+    {
+      "title": "Wireless Noise-Canceling Headphones",
+      "description": "Immerse yourself in your favorite music or podcasts without distractions. Our wireless noise-canceling headphones offer superior sound quality and comfort for long listening sessions.",
+      "price": 49.99,
+      "rating": 3.8
+    },
+    {
+      "title": "Stainless Steel Water Bottle",
+      "description": "Stay hydrated on the go with our sleek stainless steel water bottle. Designed to keep your beverages hot or cold for hours, it's the perfect companion for your active lifestyle.",
+      "price": 19.99,
+      "rating": 4.2
+    },
+    {
+      "title": "Laptop Backpack",
+      "description": "Keep your laptop and essentials organized and secure with our stylish and functional laptop backpack. Multiple compartments, padded straps, and water-resistant material make it perfect for work or travel.",
+      "price": 39.99,
+      "rating": 4.7
+    }
+]  
