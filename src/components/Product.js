@@ -18,13 +18,14 @@ function Product(props) {
         <CardBody>
         <Heading size='md'>{props.title}</Heading>
         <Text py='2'>{props.description}</Text>
-        <Text py='2'>{props.rating} / 5</Text>
+        <Text py='0'>{props.rating} / 5</Text>
+        <Text py='0' as="em">{props.category}</Text>
         </CardBody>
         <CardFooter>
         <Button variant='outline' colorScheme='teal'>
             Add To Cart
         </Button>
-        <Heading py='2' px='4' size='sm'>{props.price}</Heading>
+        <Heading py='2' px='4' size='sm'>${props.price}</Heading>
         </CardFooter>
     </Stack>
     </Card>
