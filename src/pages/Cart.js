@@ -1,12 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import { Select, Input, Button, Text } from '@chakra-ui/react'
 import Product from "../components/Product.js"
+import { useNavigate } from 'react-router-dom';
 
-function Cart({cart, setCart}) {
-    const [total, setTotal] = useState();
+function Cart({cart, setCart, total, setTotal}) {
+    const navigate = useNavigate();
     useEffect(() => {
         setTotal(cart.reduce((acc, curr)=>acc+(curr.price*curr.quantity), 0));
     }, [cart]);
+    const handleCheckoutClick = () =>{
+        navigate("/checkout");
+    }
   return (
     <div>
     <div id="Cart_container"> 
@@ -21,6 +25,7 @@ function Cart({cart, setCart}) {
               colorScheme={'teal'}
               size={'sm'}
               mr={4}
+              onClick={handleCheckoutClick}
               >
               Proceed To Pay
             </Button>
