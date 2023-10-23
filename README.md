@@ -1,3 +1,26 @@
+#Approach:
+
+Product page :
+1) First of all I decided to make 3 pages and the elements that are used in the pages are made as separate components.
+2) The pages are Home, Products, Checkout, and Cart. And the components are Navbar and Product.
+3) I have created a dummy array of JSON objects which has all the products with their attributes.
+4) Then when a user goes to the products he gets displayed with all the products.
+5) Then the product page has Sort By ratings and price. For the sorting process, I used the useState() hook, whenever the user selects a particular type of sorting option the request is handled by the respective functions where the function updates the array with the setArray.
+6) Then the sorted array is mapped and the product component is passed the each product detail which renders the component in the product page.
+7) The product object has an attribute called category, so I used js method called .filter() to the current array and set the array with the filtered array.
+8) Implemented the search product by name which uses a linear search method.
+
+Cart page : 
+1) The products that are added to the cart are rendered on the product page using the cart array which is set on the product page. I made the cart and setCart as global variables in the App.js. I can improve it using Context API.
+2) The total and the count are calculated when the component state changes. I used useEffects() hook to achieve this.
+3) A proceed to pay button redirects the user to the checkout page.
+
+Checkout page : 
+1) This page has a simple form that lets a user add a shipping address and select the payment address.
+
+# I can include DB and make it a pure MERN application. If I get an extra 4 days.
+
+# I used Chakra UI for the UI react hooks for state management
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
