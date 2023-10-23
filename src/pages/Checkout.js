@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import {
     FormControl,
     FormLabel,
@@ -9,13 +9,21 @@ import {
     Button,
     RadioGroup,
     HStack,
-    Radio
+    Radio,
+    Text
   } from '@chakra-ui/react'
 
 function Checkout({total, setTotal}) {
+  const [selectedOption, setSelectedOption] = useState("UPI");
+  const handleChange = (e) =>{
+    setSelectedOption(e.target.value);
+  } 
   return (
     <div id="Checkout_container">
         <FormControl isRequired>
+            <Button mb={2} colorScheme='teal' size='md'>
+                Proceed To Pay $ {total}
+            </Button>
             <FormLabel my={2}>First name</FormLabel>
             <Input placeholder='First name' />
             <FormLabel my={2}>Last name</FormLabel>
@@ -25,20 +33,49 @@ function Checkout({total, setTotal}) {
             <FormLabel my={2} as='legend'>
                 How Are You Going To Pay :
             </FormLabel>
-            <RadioGroup defaultValue='Itachi'>
-                <HStack spacing='24px'>
-                <Radio value='Sasuke'>PayTm</Radio>
-                <Radio value='Nagato'>UPI</Radio>
-                <Radio value='Itachi'>COD</Radio>
-                <Radio value='Sage of the six Paths'>Debit/Credit Card</Radio>
+            <RadioGroup >
+                <HStack spacing='24px' onChange={handleChange}>
+                <Radio value='UPI'>UPI</Radio>
+                <Radio value='COD'>COD</Radio>
+                <Radio value='Card'>Debit/Credit Card</Radio>
                 </HStack>
             </RadioGroup>
-            <Button mt={2} colorScheme='teal' size='md'>
-                Proceed To Pay $ {total}
-            </Button>
+            {
+              <div>
+                {(selectedOption==="UPI")?<div>
+                <FormControl>
+                  <FormLabel>Enter UPI ID</FormLabel>
+                  <Input placeholder='UPI ID' />
+                </FormControl>
+                <Button
+                  mt={4}
+                  colorScheme='teal'
+                >
+                  Verify
+                </Button>
+                </div> : (selectedOption==="COD")?<div>
+                  <Text>Pay ${total} using UPI/Cash to the delivery man.</Text>
+                </div> :
+                <div>
+                  <FormControl>
+                    <FormLabel>Card Number</FormLabel>
+                    <Input placeholder='Enter Card Number' />
+                    <FormLabel>CVV</FormLabel>
+                    <Input placeholder='Enter CVV' />
+                  </FormControl>
+                  <Button
+                    mt={4}
+                    colorScheme='teal'
+                  >
+                    Verify
+                  </Button>
+                </div>
+                }
+              </div>
+            }
         </FormControl>
     </div>
   )
 }
 
-export default Checkout
+export default Checkout;
