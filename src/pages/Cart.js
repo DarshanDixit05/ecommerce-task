@@ -3,10 +3,11 @@ import { Select, Input, Button, Text } from '@chakra-ui/react'
 import Product from "../components/Product.js"
 import { useNavigate } from 'react-router-dom';
 
-function Cart({cart, setCart, total, setTotal}) {
+function Cart({cart, setCart, total, setTotal, count, setCount}) {
     const navigate = useNavigate();
     useEffect(() => {
         setTotal(cart.reduce((acc, curr)=>acc+(curr.price*curr.quantity), 0));
+        setCount(cart.length);
     }, [cart]);
     const handleCheckoutClick = () =>{
         navigate("/checkout");
@@ -17,7 +18,8 @@ function Cart({cart, setCart, total, setTotal}) {
       <div id="Cart_top_container">
         <div id="Cart_control_bar">
           <div>
-          <Text py='1'>Total : ${total}</Text>
+          <Text py='1'>Total : ${total?.toFixed(2)}</Text>
+          <Text py='1'>Total items : {count}</Text>
           </div>
           <div>
            <Button

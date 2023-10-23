@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState();
+  const [count, setCount] = useState(0);
   return (
     <>
       <Router>
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Products" element={<Products cart={cart} setCart={setCart} />} />
-          <Route path="/Cart" element={<Cart cart={cart} setCart={setCart} total={total} setTotal={setTotal} />} />
+          <Route path="/Cart" element={<Cart cart={cart} setCart={setCart} total={total} setTotal={setTotal} count={count} setCount={setCount} />} />
           <Route path="/Checkout" element={<Checkout total={total} setTotal={setTotal} />} />
         </Routes>
       </Router>
