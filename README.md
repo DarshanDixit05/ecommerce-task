@@ -1,4 +1,4 @@
-#Approach:
+# Approach:
 
 Product page :
 1) First of all I decided to make 3 pages and the elements that are used in the pages are made as separate components.
@@ -18,7 +18,11 @@ Cart page :
 Checkout page : 
 1) This page has a simple form that lets a user add a shipping address and select the payment address.
 
+
+
 # I can include DB and make it a pure MERN application. If I get an extra 4 days.
+
+
 
 # I used Chakra UI for the UI react hooks for state management
 # Getting Started with Create React App
